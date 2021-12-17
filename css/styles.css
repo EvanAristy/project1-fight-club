@@ -10,7 +10,11 @@ body {
     height: 100vh;
     justify-content: space-evenly;
     text-align: center;
-    
+  }
+
+  /* re-usables */
+  .hide{
+      display: none;
   }
 
 /* ===== Welcome ===== */
@@ -22,4 +26,12 @@ body {
     width: 10%;
 }
 
-/* jgit */
+/* ===== Fight Stage */
+
+#arena{
+    background-image: url('https://i.pinimg.com/originals/35/13/43/3513439019ca80cba5f01beb2467b70c.gif');
+    width: 90%;
+    height: 80%;
+    background-size: cover;
+    padding-top: 0px;
+}
