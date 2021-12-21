@@ -30,22 +30,41 @@
                 <input type="text" id="p2name">
             </div>
         </form>
-        <button onclick="game.continue()">Continue</button>
+        <button class="cool-button" onclick="game.continue()">Continue</button>
     </div>
 
     <div id="character-select" class="hide">
         <h2>Choose your fighter</h2>
+
+        <div id="p1-preview">
+            <h2>player 1</h2>
+            <img src="" alt="">
+        </div>
+            
+        <div id="p2-preview">
+            <h2>player 2</h2>
+            <img src="" alt="">
+        </div>
+
         <div id="charProfiles">
             <img class="profile-pic" src="images/ryu-profile.png" alt="">
             <img class="profile-pic" src="images/wolverine-profile.png" alt="">
             <img class="profile-pic" src="images/ken-profile.png" alt="">
-            <img class="profile-pic" src="images/pokemon-profile.png" alt="">
+            <img id="hidden-profile" class="profile-pic" src="images/vegeta-profile.png" alt="">
+            <img class="profile-pic" src="images/akuma-profile.png" alt="">
         </div>
-        <button onclick="game.fight()">FIGHT</button>
+
+        <button class="cool-button" onclick="game.fight()">FIGHT</button>
     </div>
     
     <div id="arena" class="hide">
-        <h3>dkghjdlkjfalsk</h3>
+        <h1 id="p1"></h1>
+        <h1 id="p2"></h1> 
+        <div id="fighters">
+            <img id="avatar1" class="avatar" src="images/akuma-idle.gif" alt="">
+            <img id="avatar2" class="avatar" src="images/ryu-idle.gif" alt="">
+        </div>
+        
     </div>
 
 

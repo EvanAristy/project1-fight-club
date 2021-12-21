@@ -13,6 +13,7 @@ const game = {
     fight: () => {
         charDiv.classList.add('hide');
         fightDiv.classList.remove('hide');
+        fightDiv.classList.add('flex')
         title.classList.add('hide')
     }
 }

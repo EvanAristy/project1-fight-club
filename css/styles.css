@@ -1,6 +1,7 @@
 *{
     margin: 0;
     box-sizing: border-box;
+    color: white;
 }
 
 body {
@@ -10,11 +11,50 @@ body {
     height: 100vh;
     justify-content: space-evenly;
     text-align: center;
+    background-image: url("https://media.hitrecord.org/derivations/image/crop/1200x630/eyJpZCI6Im9yaWdpbmFscy9pbWFnZXMvMTYwMTY4My9hdHRhY2htZW50L2phY2NvYm0tMTYwMTY4My5naWYiLCJzdG9yYWdlIjoic3RvcmUifQ?version=4&signature=12f6dc052c4d2e1f6d8a6c67da342f7d8f223f321bc1e10f1ad49eefd6cc0357");
+    background-size: cover;
+  }
+
+  button{
+      margin: 50px;
+  }
+
+  .cool-button{
+    position: relative;
+    background: #ff7231;
+    padding: 0.5rem 1rem;
+    font-size: 1.2rem;
+    border: none;
+    color: white;
+    cursor: pointer;
+    outline: none;
+    overflow: hidden;
+  }
+
+  .cool-button::before {
+    --size: 0;
+    content: '';
+    position: absolute;
+    left: var(--x);
+    top: var(--y);
+    width: var(--size);
+    height: var(--size);
+    background: radial-gradient(circle closest-side, pink, transparent);
+    transform: translate(-50%, -50%);
+    transition: width 0.2s ease, height 0.2s ease;
+  }
+  
+  .cool-button:hover::before {
+    --size: 200px;
   }
 
   /* re-usables */
   .hide{
       display: none;
+  }
+
+  .flex{
+      display: flex;
   }
 
 /* ===== Welcome ===== */
@@ -26,12 +66,44 @@ body {
     width: 10%;
 }
 
+#p1-preview{
+    position: fixed;
+    left: 10%;
+    top: 20%;
+}
+
+#p2-preview{
+    position: fixed;
+    right: 10%;
+    top: 20%;
+}
+
+#hidden-profile{
+    position:fixed;
+    bottom: 0;
+    right: 20%;
+    opacity: .1;
+    width: 5%;
+}
+
 /* ===== Fight Stage */
 
 #arena{
+    /* display: flex; */
+    align-items: flex-end;
+    justify-content: center;
     background-image: url('https://i.pinimg.com/originals/35/13/43/3513439019ca80cba5f01beb2467b70c.gif');
     width: 90%;
     height: 80%;
     background-size: cover;
     padding-top: 0px;
+    margin-top: 0px;
 }
+
+#avatar2{
+    transform: scaleX(-1);
+}
+
+
+
+
