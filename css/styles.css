@@ -1,7 +1,8 @@
 *{
     margin: 0;
     box-sizing: border-box;
-    color: white;
+    /* color: white; */
+    /* font-family: 'Shizuru', cursive; */
 }
 
 body {
@@ -11,7 +12,7 @@ body {
     height: 100vh;
     justify-content: space-evenly;
     text-align: center;
-    background-image: url("https://media.hitrecord.org/derivations/image/crop/1200x630/eyJpZCI6Im9yaWdpbmFscy9pbWFnZXMvMTYwMTY4My9hdHRhY2htZW50L2phY2NvYm0tMTYwMTY4My5naWYiLCJzdG9yYWdlIjoic3RvcmUifQ?version=4&signature=12f6dc052c4d2e1f6d8a6c67da342f7d8f223f321bc1e10f1ad49eefd6cc0357");
+    /* background-image: url("https://media.hitrecord.org/derivations/image/crop/1200x630/eyJpZCI6Im9yaWdpbmFscy9pbWFnZXMvMTYwMTY4My9hdHRhY2htZW50L2phY2NvYm0tMTYwMTY4My5naWYiLCJzdG9yYWdlIjoic3RvcmUifQ?version=4&signature=12f6dc052c4d2e1f6d8a6c67da342f7d8f223f321bc1e10f1ad49eefd6cc0357"); */
     background-size: cover;
   }
 
@@ -19,7 +20,7 @@ body {
       margin: 50px;
   }
 
-  .cool-button{
+  /* .cool-button{
     position: relative;
     background: #ff7231;
     padding: 0.5rem 1rem;
@@ -46,7 +47,7 @@ body {
   
   .cool-button:hover::before {
     --size: 200px;
-  }
+  } */
 
   /* re-usables */
   .hide{
@@ -78,7 +79,11 @@ body {
     top: 20%;
 }
 
-#hidden-profile{
+#p2-preview > img{
+    transform: scaleX(-1);
+}
+
+.hidden-profile{
     position:fixed;
     bottom: 0;
     right: 20%;
@@ -86,13 +91,48 @@ body {
     width: 5%;
 }
 
+/* .button {
+    background-color: #c47135;
+    border: none;
+    color: #ffffff;
+    outline: none;
+    padding: 12px 40px 10px;
+    position: relative;
+  }
+  .button:before,
+  .button:after {
+    border: 0 solid transparent;
+    transition: all 0.25s;
+    content: '';
+    height: 24px;
+    position: absolute;
+    width: 24px;
+  }
+  .button:before {
+    border-top: 2px solid #c47135;
+    left: 0px;
+    top: -5px;
+  }
+  .button:after {
+    border-bottom: 2px solid #c47135;
+    bottom: -5px;
+    right: 0px;
+  }
+  .button:hover {
+    background-color: #c47135;
+  }
+  .button:hover:before,
+  .button:hover:after {
+    height: 100%;
+    width: 100%;
+  } */
+
 /* ===== Fight Stage */
 
 #arena{
-    /* display: flex; */
     align-items: flex-end;
     justify-content: center;
-    background-image: url('https://i.pinimg.com/originals/35/13/43/3513439019ca80cba5f01beb2467b70c.gif');
+    background-image: url(https://i.pinimg.com/originals/35/13/43/3513439019ca80cba5f01beb2467b70c.gif);
     width: 90%;
     height: 80%;
     background-size: cover;

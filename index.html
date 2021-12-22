@@ -7,6 +7,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- css link -->
     <link rel="stylesheet" href="css/styles.css">
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Shizuru&display=swap" rel="stylesheet">
+
     <title>Fight</title>
 </head>
 
@@ -16,6 +21,7 @@
         <h1>Fight Club</h1>
     </div>
 
+    <!-- WELCOME SCREEN -->
     <div id="welcome">
         <form action="">
             <h3>Player 1</h3>
@@ -33,38 +39,47 @@
         <button class="cool-button" onclick="game.continue()">Continue</button>
     </div>
 
+    <!-- PLAYER SELECT SCREEN -->
     <div id="character-select" class="hide">
-        <h2>Choose your fighter</h2>
-
-        <div id="p1-preview">
-            <h2>player 1</h2>
-            <img src="" alt="">
-        </div>
-            
-        <div id="p2-preview">
-            <h2>player 2</h2>
-            <img src="" alt="">
-        </div>
-
-        <div id="charProfiles">
-            <img class="profile-pic" src="images/ryu-profile.png" alt="">
-            <img class="profile-pic" src="images/wolverine-profile.png" alt="">
-            <img class="profile-pic" src="images/ken-profile.png" alt="">
-            <img id="hidden-profile" class="profile-pic" src="images/vegeta-profile.png" alt="">
-            <img class="profile-pic" src="images/akuma-profile.png" alt="">
-        </div>
-
-        <button class="cool-button" onclick="game.fight()">FIGHT</button>
-    </div>
+        <h2 id="prompt">Player 1, choose your fighter</h2>
+       
+            <div id="p1-preview">
+                <h2 id="p1">player 1</h2>
+                <h4 id="p1-avatar"></h4>
+                <img id="p1Idle" src="" alt="">
+            </div>
     
-    <div id="arena" class="hide">
-        <h1 id="p1"></h1>
-        <h1 id="p2"></h1> 
-        <div id="fighters">
-            <img id="avatar1" class="avatar" src="images/akuma-idle.gif" alt="">
-            <img id="avatar2" class="avatar" src="images/ryu-idle.gif" alt="">
+            <div id="p2-preview">
+                <h2 id="p2">player 2</h2>
+                <h4 id="p2-avatar"></h4>
+                <img id="p2Idle" src="" alt="">
+            </div>
+        
+    
+        <div id="charProfiles">
+            <img id="ryu" onclick="game.choosePlayer('ryu')" class="profile-pic" src="images/ryu-profile.png" alt="">
+            
+            
+            <img id="akuma" onclick="game.choosePlayer('akuma')" class="profile-pic" src="images/akuma-profile.png" alt="">
+        </div>
+
+        <button id="confirm" class="button" onclick="game.confirm()" >Confirm</button>
+
+        <div id="fight" class="hide" >
+            <button class="cool-button" class="hide" onclick="game.fight()">FIGHT</button>
         </div>
         
+    </div>
+
+    <!-- ARENA SCREEN -->
+    <div id="arena" class="hide">
+        <h1 id="p1"></h1>
+        <h1 id="p2"></h1>
+        <div id="fighters">
+            <img id="avatar1" class="avatar" src="" alt="">
+            <img id="avatar2" class="avatar" src="" alt="">
+        </div>
+
     </div>
 
 
@@ -79,3 +94,39 @@
 </body>
 
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<img id="vegeta" onclick="game.vegeta()" class="hidden-profile" class="profile-pic" src="images/vegeta-profile.png" alt="">
