@@ -1,8 +1,8 @@
 *{
     margin: 0;
     box-sizing: border-box;
-    /* color: white; */
-    /* font-family: 'Shizuru', cursive; */
+    color: white;
+    font-family: 'Shizuru', cursive;
 }
 
 body {
@@ -12,7 +12,7 @@ body {
     height: 100vh;
     justify-content: space-evenly;
     text-align: center;
-    /* background-image: url("https://media.hitrecord.org/derivations/image/crop/1200x630/eyJpZCI6Im9yaWdpbmFscy9pbWFnZXMvMTYwMTY4My9hdHRhY2htZW50L2phY2NvYm0tMTYwMTY4My5naWYiLCJzdG9yYWdlIjoic3RvcmUifQ?version=4&signature=12f6dc052c4d2e1f6d8a6c67da342f7d8f223f321bc1e10f1ad49eefd6cc0357"); */
+    background-image: url("https://media.hitrecord.org/derivations/image/crop/1200x630/eyJpZCI6Im9yaWdpbmFscy9pbWFnZXMvMTYwMTY4My9hdHRhY2htZW50L2phY2NvYm0tMTYwMTY4My5naWYiLCJzdG9yYWdlIjoic3RvcmUifQ?version=4&signature=12f6dc052c4d2e1f6d8a6c67da342f7d8f223f321bc1e10f1ad49eefd6cc0357");
     background-size: cover;
   }
 
@@ -20,7 +20,7 @@ body {
       margin: 50px;
   }
 
-  /* .cool-button{
+  .cool-button{
     position: relative;
     background: #ff7231;
     padding: 0.5rem 1rem;
@@ -47,7 +47,7 @@ body {
   
   .cool-button:hover::before {
     --size: 200px;
-  } */
+  }
 
   /* re-usables */
   .hide{
@@ -87,11 +87,11 @@ body {
     position:fixed;
     bottom: 0;
     right: 20%;
-    opacity: .1;
+    opacity: .06;
     width: 5%;
 }
 
-/* .button {
+.button {
     background-color: #c47135;
     border: none;
     color: #ffffff;
@@ -125,20 +125,19 @@ body {
   .button:hover:after {
     height: 100%;
     width: 100%;
-  } */
+  }
 
 /* ===== Fight Stage */
 
 #arena{
     align-items: flex-end;
     justify-content: center;
-    /* background-image: url(https://i.pinimg.com/originals/35/13/43/3513439019ca80cba5f01beb2467b70c.gif); */
+    background-image: url(https://i.pinimg.com/originals/35/13/43/3513439019ca80cba5f01beb2467b70c.gif);
     width: 90%;
     height: 80%;
     background-size: cover;
     padding-top: 0px;
     margin-top: 0px;
-    background-color: coral;
 }
 
 #avatar2{
@@ -146,7 +145,7 @@ body {
 }
 
 #attack-buttons{
-  display: flex;
+  /* display: flex; */
   justify-content: center;
 }
 

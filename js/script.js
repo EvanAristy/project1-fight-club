@@ -3,14 +3,11 @@ const welcomeDiv = document.querySelector("#welcome");
 const charDiv = document.querySelector("#character-select");
 const fightDiv = document.querySelector("#arena");
 const title = document.querySelector("#intro");
+const attackButtons = document.querySelector("#attack-buttons")
 
 // Players
 const p1Name = document.querySelector("#p1name");
 const p2Name = document.querySelector("#p2name");
-
-//Avatars
-const ryu = document.querySelector("#ryu");
-const akuma = document.querySelector("#akuma");
 
 let currAvatar = "";
 class Player {
@@ -63,7 +60,6 @@ const game = {
       document.querySelector("#fight").classList.remove("hide");
       this.players.push(new Player(p2Name.value, document.querySelector("#p2-avatar").innerHTML, 5, 30));
     }
-    // console.log(players)
   },
 
   fight: () => {
@@ -71,22 +67,21 @@ const game = {
     fightDiv.classList.remove("hide");
     fightDiv.classList.add("flex");
     title.classList.add("hide");
-    document
-      .querySelector("#avatar1")
-      .setAttribute("src", `images/${game.players[0].avatar}-idle.gif`);
-    document
-      .querySelector("#avatar2")
-      .setAttribute("src", `images/${game.players[1].avatar}-idle.gif`);
+    attackButtons.classList.remove("hide")
+    attackButtons.classList.add("flex")
+    document.querySelector("#avatar1").setAttribute("src", `images/${game.players[0].avatar}-idle.gif`);
+    document.querySelector("#avatar2").setAttribute("src", `images/${game.players[1].avatar}-idle.gif`);
   },
 
   attack1: () => {
     document.querySelector("#avatar1").setAttribute('src', `images/${game.players[0].avatar}-attack${Math.floor(Math.random()*4)+1}.gif`);
-
+    game.players[1].hp -= game.players[0].ap;
   },
   attack2: () => {
     document.querySelector("#avatar2").setAttribute('src', `images/${game.players[1].avatar}-attack${Math.floor(Math.random()*4)+1}.gif`);
+    game.players[0].hp -= game.players[1].ap;
+  },
 
-  }
+// game logic
+
 };
-
-console.log()
