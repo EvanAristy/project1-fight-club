@@ -80,9 +80,13 @@ const game = {
   },
 
   attack1: () => {
-    document.querySelector("#avatar1").setAttribute('src', `images/${game.players[0].avatar}-attack${Math.floor(Math.random()*3)+1}`)
+    document.querySelector("#avatar1").setAttribute('src', `images/${game.players[0].avatar}-attack${Math.floor(Math.random()*4)+1}.gif`);
+
   },
   attack2: () => {
-    document.querySelector("#avatar2").setAttribute('src', `images/${game.players[1].avatar}-attack${Math.floor(Math.random()*3)+1}`)
+    document.querySelector("#avatar2").setAttribute('src', `images/${game.players[1].avatar}-attack${Math.floor(Math.random()*4)+1}.gif`);
+
   }
 };
+
+console.log()
