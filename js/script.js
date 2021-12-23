@@ -12,11 +12,13 @@ const p2Name = document.querySelector("#p2name");
 const ryu = document.querySelector("#ryu");
 const akuma = document.querySelector("#akuma");
 
+let currAvatar = "";
 class Player {
-  constructor(name, avatar, ap) {
+  constructor(name, avatar, ap, hp) {
     this.name = name;
     this.avatar = avatar;
     this.ap = ap;
+    this.hp = hp;
   }
 }
 
@@ -37,29 +39,31 @@ const game = {
   },
 
   players: [],
-	playerOneReady: false,
-	choosePlayer: function(currAvatar){
-  if(!this.playerOneReady){
-    document.querySelector("#p1-avatar").innerHTML = currAvatar;
-    document.querySelector("#p1Idle").setAttribute("src", `images/${currAvatar}-idle.gif`);
-  } else{
-    document.querySelector("#p2-avatar").innerHTML = currAvatar;
-    document.querySelector("#p2Idle").setAttribute("src", `images/${currAvatar}-idle.gif`);
-  }  
+  playerOneReady: false,
+  choosePlayer: function (currAvatar) {
+    if (!this.playerOneReady) {
+      document.querySelector("#p1-avatar").innerHTML = currAvatar;
+      document.querySelector("#p1Idle").setAttribute("src", `images/${currAvatar}-idle.gif`);
+    } else {
+      document.querySelector("#p2-avatar").innerHTML = currAvatar;
+      document.querySelector("#p2Idle").setAttribute("src", `images/${currAvatar}-idle.gif`);
+    }
   },
 
-  confirm(){
-    if(!this.playerOneReady){
-      // this.players.push(new Player(p1Name.value, currAvatar, 5));
-      document.querySelector("#prompt").innerHTML = "Player 2, choose your fighter"
-      this.playerOneReady = true
-    } else{
-      // this.players.push(new Player(p2Name.value, currAvatar, 5));
-      document.querySelector("#prompt").innerHTML = "Let's Fight!!"
-      this.playerTwoReady = true
-      document.querySelector("#confirm").classList.add('hide');
-      document.querySelector("#fight").classList.remove('hide');
+  confirm() {
+    if (!this.playerOneReady) {
+      document.querySelector("#prompt").innerHTML =
+        "Player 2, choose your fighter";
+      this.playerOneReady = true;
+      this.players.push(new Player(p1Name.value, document.querySelector("#p1-avatar").innerHTML, 5, 30));
+    } else {
+      document.querySelector("#prompt").innerHTML = "Let's Fight!!";
+      this.playerTwoReady = true;
+      document.querySelector("#confirm").classList.add("hide");
+      document.querySelector("#fight").classList.remove("hide");
+      this.players.push(new Player(p2Name.value, document.querySelector("#p2-avatar").innerHTML, 5, 30));
     }
+    // console.log(players)
   },
 
   fight: () => {
@@ -67,6 +71,18 @@ const game = {
     fightDiv.classList.remove("hide");
     fightDiv.classList.add("flex");
     title.classList.add("hide");
-    
+    document
+      .querySelector("#avatar1")
+      .setAttribute("src", `images/${game.players[0].avatar}-idle.gif`);
+    document
+      .querySelector("#avatar2")
+      .setAttribute("src", `images/${game.players[1].avatar}-idle.gif`);
   },
+
+  attack1: () => {
+    document.querySelector("#avatar1").setAttribute('src', `images/${game.players[0].avatar}-attack${Math.floor(Math.random()*3)+1}`)
+  },
+  attack2: () => {
+    document.querySelector("#avatar2").setAttribute('src', `images/${game.players[1].avatar}-attack${Math.floor(Math.random()*3)+1}`)
+  }
 };
