@@ -69,16 +69,24 @@ const game = {
     title.classList.add("hide");
     attackButtons.classList.remove("hide")
     attackButtons.classList.add("flex")
+    // document.querySelector("#p1").innerHTML = game.players[0].name
+    // document.querySelector("#p2").innerHTML = game.players[1].name
     document.querySelector("#avatar1").setAttribute("src", `images/${game.players[0].avatar}-idle.gif`);
     document.querySelector("#avatar2").setAttribute("src", `images/${game.players[1].avatar}-idle.gif`);
   },
 
   attack1: () => {
     document.querySelector("#avatar1").setAttribute('src', `images/${game.players[0].avatar}-attack${Math.floor(Math.random()*4)+1}.gif`);
+    setTimeout(() => {
+      document.querySelector("#avatar1").setAttribute('src', `images/${game.players[0].avatar}-idle.gif`);
+    }, 3000);
     game.players[1].hp -= game.players[0].ap;
   },
   attack2: () => {
     document.querySelector("#avatar2").setAttribute('src', `images/${game.players[1].avatar}-attack${Math.floor(Math.random()*4)+1}.gif`);
+    setTimeout(() => {
+      document.querySelector("#avatar2").setAttribute('src', `images/${game.players[1].avatar}-idle.gif`);
+    }, 3000);
     game.players[0].hp -= game.players[1].ap;
   },
 
