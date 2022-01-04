@@ -87,6 +87,9 @@ const game = {
     if(game.players[1].hp < 0){
       document.querySelector("#avatar2").setAttribute('src', `images/${game.players[1].avatar}-ko.gif`);
       document.querySelector("#avatar1").setAttribute('src', `images/${game.players[0].avatar}-victory.gif`);
+      setTimeout(() => {
+        alert(`${game.players[0].name} won using ${game.players[0].avatar}!!!`)
+      }, 2000);
     }
   },
   attack2: () => {
@@ -99,6 +102,9 @@ const game = {
     if(game.players[0].hp < 0){
       document.querySelector("#avatar1").setAttribute('src', `images/${game.players[0].avatar}-ko.gif`);
       document.querySelector("#avatar2").setAttribute('src', `images/${game.players[1].avatar}-victory.gif`);
+      setTimeout(() => {
+        alert(`${game.players[1].name} won using ${game.players[1].avatar}!!!`)
+      }, 2000);
     }
   },
 
