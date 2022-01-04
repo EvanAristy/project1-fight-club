@@ -52,13 +52,13 @@ const game = {
       document.querySelector("#prompt").innerHTML =
         "Player 2, choose your fighter";
       this.playerOneReady = true;
-      this.players.push(new Player(p1Name.value, document.querySelector("#p1-avatar").innerHTML, Math.floor(Math.random()*7) + 2, 30));
+      this.players.push(new Player(p1Name.value, document.querySelector("#p1-avatar").innerHTML, Math.floor(Math.random()*7) + 2, 50));
     } else {
       document.querySelector("#prompt").innerHTML = "Let's Fight!!";
       this.playerTwoReady = true;
       document.querySelector("#confirm").classList.add("hide");
       document.querySelector("#fight").classList.remove("hide");
-      this.players.push(new Player(p2Name.value, document.querySelector("#p2-avatar").innerHTML, Math.floor(Math.random()*7) + 2, 30));
+      this.players.push(new Player(p2Name.value, document.querySelector("#p2-avatar").innerHTML, Math.floor(Math.random()*7) + 2, 50));
     }
   },
 
@@ -73,6 +73,8 @@ const game = {
     // document.querySelector("#p2").innerHTML = game.players[1].name
     document.querySelector("#avatar1").setAttribute("src", `images/${game.players[0].avatar}-idle.gif`);
     document.querySelector("#avatar2").setAttribute("src", `images/${game.players[1].avatar}-idle.gif`);
+    document.querySelector("#name1").innerHTML = game.players[0].name;
+    document.querySelector("#name2").innerHTML = game.players[1].name;
   },
 
   attack1: () => {
@@ -81,6 +83,7 @@ const game = {
       document.querySelector("#avatar1").setAttribute('src', `images/${game.players[0].avatar}-idle.gif`);
     }, 3000);
     game.players[1].hp -= game.players[0].ap;
+    document.querySelector("#p2health").innerHTML = game.players[1].hp;
     if(game.players[1].hp < 0){
       document.querySelector("#avatar2").setAttribute('src', `images/${game.players[1].avatar}-ko.gif`);
       document.querySelector("#avatar1").setAttribute('src', `images/${game.players[0].avatar}-victory.gif`);
@@ -92,6 +95,7 @@ const game = {
       document.querySelector("#avatar2").setAttribute('src', `images/${game.players[1].avatar}-idle.gif`);
     }, 3000);
     game.players[0].hp -= game.players[1].ap;
+    document.querySelector("#p1health").innerHTML = game.players[0].hp;
     if(game.players[0].hp < 0){
       document.querySelector("#avatar1").setAttribute('src', `images/${game.players[0].avatar}-ko.gif`);
       document.querySelector("#avatar2").setAttribute('src', `images/${game.players[1].avatar}-victory.gif`);

@@ -149,6 +149,23 @@ body {
   justify-content: center;
 }
 
+#player1Stats{
+  position: absolute;
+  bottom: 80%;
+  left: 20%;
+}
+
+#player2Stats{
+  position: absolute;
+  bottom: 80%;
+  right: 20%;
+}
+
+#p1health, #p2health{
+  color: green;
+  font-size: 3em;
+}
+
 
 
 
