@@ -82,7 +82,7 @@ const game = {
     setTimeout(() => {
       document.querySelector("#avatar1").setAttribute('src', `images/${game.players[0].avatar}-idle.gif`);
     }, 3000);
-    game.players[1].hp -= game.players[0].ap;
+    game.players[1].hp -= Math.floor(Math.random()*7) + 2;
     document.querySelector("#p2health").innerHTML = game.players[1].hp;
     if(game.players[1].hp < 0){
       document.querySelector("#avatar2").setAttribute('src', `images/${game.players[1].avatar}-ko.gif`);
@@ -97,7 +97,7 @@ const game = {
     setTimeout(() => {
       document.querySelector("#avatar2").setAttribute('src', `images/${game.players[1].avatar}-idle.gif`);
     }, 3000);
-    game.players[0].hp -= game.players[1].ap;
+    game.players[0].hp -= Math.floor(Math.random()*7) + 2;
     document.querySelector("#p1health").innerHTML = game.players[0].hp;
     if(game.players[0].hp < 0){
       document.querySelector("#avatar1").setAttribute('src', `images/${game.players[0].avatar}-ko.gif`);
